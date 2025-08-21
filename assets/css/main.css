@@ -1,11 +1,14 @@
 /* Estilos Globais e Animações */
 :root {
-    --primary-color: #007bff;
-    --background-color: #f4f7f9;
-    --card-background: #ffffff;
-    --text-color: #333;
-    --light-text-color: #666;
-    --border-color: #e0e0e0;
+    --primary-color: #64ffda; /* Um verde-água/ciano vibrante para destaque */
+    --background-color: #0a192f; /* Fundo principal: Navy Blue profundo */
+    --card-background: #112240; /* Um azul um pouco mais claro para os cards */
+    --headings-color: #e6f1ff; /* Branco suave para títulos principais */
+    --text-color: #ccd6f6; /* Azul muito claro/cinza para texto geral */
+    --light-text-color: #8892b0; /* Cinza-azulado para parágrafos e textos secundários */
+    --border-color: #233554;
+    --shadow-color: rgba(0, 0, 0, 0.7);
+    --notice-background: #172a45; /* Fundo para caixas de aviso */
 }
 
 @keyframes fadeIn {
@@ -37,6 +40,7 @@ body {
 .main-header h1 {
     font-weight: 700;
     margin: 0;
+    color: var(--headings-color);
 }
 
 .main-header p {
@@ -63,7 +67,7 @@ body {
     padding: 25px;
     text-decoration: none;
     color: var(--text-color);
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 30px -15px var(--shadow-color);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     animation: fadeIn 0.6s ease-out forwards;
     opacity: 0; /* Começa invisível para a animação */
@@ -72,12 +76,12 @@ body {
 
 .card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 30px -15px var(--shadow-color);
 }
 
 .card h2 {
     margin: 0 0 10px 0;
-    color: var(--primary-color);
+    color: var(--headings-color); /* Títulos dos cards também com mais destaque */
     font-size: 1.2rem;
 }
 
@@ -91,7 +95,7 @@ body {
 .card.disabled {
     opacity: 0.5;
     pointer-events: none;
-    background-color: #f9f9f9;
+    background-color: #172a45;
 }
 
 /* ============================================== */
@@ -135,6 +139,7 @@ body {
 .tool-section h3 {
     margin-top: 0;
     font-weight: 400;
+    color: var(--headings-color);
     border-bottom: 2px solid var(--primary-color);
     padding-bottom: 8px;
     margin-bottom: 15px;
@@ -148,6 +153,13 @@ textarea, input[type="text"], input[type="password"] {
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
     box-sizing: border-box; /* Garante que padding não afete a largura total */
+    background-color: #0e203c; /* Fundo dos inputs ligeiramente diferente */
+    color: var(--text-color);
+}
+
+textarea::placeholder, input::placeholder {
+    color: var(--light-text-color);
+    opacity: 0.7;
 }
 
 textarea {
@@ -159,7 +171,7 @@ textarea {
 /* Botões */
 .btn {
     padding: 12px 20px;
-    border: none;
+    border: 1px solid var(--primary-color); /* Borda na cor de destaque */
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
@@ -171,20 +183,21 @@ textarea {
 
 .btn-primary {
     background-color: var(--primary-color);
-    color: white;
+    color: #0a192f; /* Texto escuro para alto contraste no botão primário */
 }
 
 .btn-primary:hover {
-    background-color: #0056b3;
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 .btn-secondary {
-    background-color: #6c757d;
-    color: white;
+    background-color: transparent;
+    color: var(--primary-color);
 }
 
 .btn-secondary:hover {
-    background-color: #5a6268;
+    background-color: rgba(100, 255, 218, 0.1); /* Efeito de 'glow' no hover */
 }
 
 .input-group {
@@ -195,7 +208,8 @@ textarea {
     font-size: 0.9rem;
     color: var(--light-text-color);
     margin-top: 10px;
-    background-color: #eef6ff;
+    background-color: var(--notice-background);
     padding: 10px;
     border-radius: 5px;
+    border-left: 3px solid var(--primary-color); /* Detalhe visual na caixa de aviso */
 }
