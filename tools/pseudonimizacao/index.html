@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pseudonimização de Dados</title>
+    <!-- O caminho para o CSS precisa voltar dois níveis de diretório -->
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="tool-header">
+        <a href="../../index.html">&larr; Voltar para a Caixa de Ferramentas</a>
+    </header>
+
+    <main class="tool-container">
+        <!-- Coluna da Esquerda: Entrada -->
+        <section class="tool-section">
+            <h3>1. Insira os Dados</h3>
+            <textarea id="input-data" placeholder="Cole seus dados aqui, um por linha.&#10;Ex: nome.sobrenome@email.com&#10;outro.nome@email.com"></textarea>
+        </section>
+
+        <!-- Coluna da Direita: Configuração e Saída -->
+        <section class="tool-section">
+            <div class="input-group">
+                <h3>2. Defina a Palavra-Chave (Sal)</h3>
+                <input type="password" id="salt-key" placeholder="Digite uma palavra-chave secreta">
+                <p class="notice">
+                    <strong>Importante:</strong> Esta palavra-chave é o seu segredo. Guarde-a para poder gerar os mesmos pseudônimos no futuro.
+                </p>
+            </div>
+            
+            <div class="input-group">
+                <h3>3. Execute e Obtenha o Resultado</h3>
+                <button id="process-btn" class="btn btn-primary">Pseudonimizar</button>
+                <textarea id="output-data" readonly placeholder="Os resultados aparecerão aqui..."></textarea>
+            </div>
+
+            <div>
+                <button id="copy-btn" class="btn btn-secondary">Copiar Resultados</button>
+                <button id="download-txt-btn" class="btn btn-secondary">Baixar Resultados (.txt)</button>
+                <button id="download-map-btn" class="btn btn-secondary">Baixar Mapa de Reversão (.json)</button>
+            </div>
+        </section>
+    </main>
+    
+    <!-- Script específico da ferramenta -->
+    <script src="script.js"></script>
+</body>
+</html>
