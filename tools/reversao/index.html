@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reverter Pseudônimo</title>
+    <link rel="stylesheet" href="../../assets/css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header class="tool-header">
+        <a href="../../index.html">&larr; Voltar para a Caixa de Ferramentas</a>
+    </header>
+
+    <main class="tool-container">
+        <!-- Coluna da Esquerda: Entrada -->
+        <section class="tool-section">
+            <div class="input-group">
+                <h3>1. Carregue o Mapa de Reversão</h3>
+                <input type="file" id="map-file-input" accept=".json">
+                <p class="notice">
+                    Selecione o arquivo <strong>mapa_reversao.json</strong> que você salvou durante a pseudonimização.
+                </p>
+            </div>
+            <div class="input-group" style="flex-grow: 1; display: flex; flex-direction: column;">
+                <h3>2. Insira os Pseudônimos</h3>
+                <textarea id="input-data" placeholder="Cole os pseudônimos (hashes) aqui, um por linha."></textarea>
+            </div>
+        </section>
+
+        <!-- Coluna da Direita: Ação e Saída -->
+        <section class="tool-section">
+             <h3>3. Execute e Obtenha o Resultado</h3>
+            <button id="process-btn" class="btn btn-primary">Reverter</button>
+            <textarea id="output-data" readonly placeholder="Os dados originais correspondentes aparecerão aqui..."></textarea>
+            
+            <div style="margin-top: 10px;">
+                <button id="copy-btn" class="btn btn-secondary">Copiar Resultados</button>
+                <button id="download-txt-btn" class="btn btn-secondary">Baixar Resultados (.txt)</button>
+            </div>
+        </section>
+    </main>
+    
+    <script src="script.js"></script>
+</body>
+</html>
